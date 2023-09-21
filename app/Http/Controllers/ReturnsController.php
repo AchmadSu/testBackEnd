@@ -26,7 +26,7 @@ class ReturnsController extends Controller
         $dueDate = Carbon::createFromFormat('Y-m-d', $checkLoans->due_date);
         $isLate = false;
         
-        if($dueDate > Carbon::now()) {
+        if($dueDate < Carbon::now()) {
             $isLate = true;
             $message = "Note: Anda terkena penalti!";
         }
